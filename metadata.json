@@ -1,0 +1,6 @@
+{
+  "name": "EnergyCore AI",
+  "description": "Kinetic Intelligence System for facility energy analytics, digital twin telemetry, computer vision occupancy detection, and automated load control.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
