@@ -116,3 +116,29 @@ export interface HourlyTrendRow {
   occupancy: number;
   status: 'Optimal' | 'High Load' | 'Off-Peak';
 }
+
+export interface ESP32SensorReading {
+  id: string;
+  sampleIndex: number;
+  timestamp: string;
+  dht22Temp: number;
+  dht22Humidity: number;
+  motion: boolean;
+  co2Ppm: number;
+  bme280Temp: number;
+  bme280Humidity: number;
+  bme280Pressure: number;
+  ambientLightLux: number;
+  rawBlock?: string;
+}
+
+export interface ESP32SystemStatus {
+  isWarmingUp: boolean;
+  totalSamples: number;
+  lastUpdated: string;
+  activeDeviceId: string;
+  firmwareVersion: string;
+  wifiSsid: string;
+  ipAddress: string;
+}
+

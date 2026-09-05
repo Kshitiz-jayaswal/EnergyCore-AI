@@ -8,7 +8,8 @@ import {
   CheckCircle, 
   AlertCircle, 
   ShieldCheck, 
-  Radio
+  Radio,
+  Upload
 } from 'lucide-react';
 
 interface DeviceItem {
@@ -21,7 +22,12 @@ interface DeviceItem {
   lastPing: string;
 }
 
+interface DevicesViewProps {
+  onOpenUploadModal?: () => void;
+}
+
 const initialDevices: DeviceItem[] = [
+  { id: 'dev-0', name: 'ESP32-MS-01', type: 'Multi Sensor Station (DHT22, BME280, PIR, MQ135)', ip: '192.168.10.77', status: 'ONLINE', firmware: 'v2.1.0-rtos', lastPing: '2ms' },
   { id: 'dev-1', name: 'ESP32-CAM-01', type: 'YOLO Computer Vision Node', ip: '192.168.10.45', status: 'ONLINE', firmware: 'v1.4.2-rtos', lastPing: '4ms' },
   { id: 'dev-2', name: 'ESP32-CAM-02', type: 'Turnstile Vision Node', ip: '192.168.10.46', status: 'ONLINE', firmware: 'v1.4.2-rtos', lastPing: '6ms' },
   { id: 'dev-3', name: 'ESP32-CAM-04', type: 'Corridor Vision Node', ip: '192.168.10.48', status: 'OFFLINE', firmware: 'v1.3.9-rtos', lastPing: 'Timeout' },
@@ -30,7 +36,8 @@ const initialDevices: DeviceItem[] = [
   { id: 'dev-6', name: 'LORAWAN-GW-CENTRAL', type: 'Sensedge Air Quality Hub', ip: '192.168.30.01', status: 'ONLINE', firmware: 'v4.0.1', lastPing: '8ms' },
 ];
 
-export const DevicesView: React.FC = () => {
+export const DevicesView: React.FC<DevicesViewProps> = ({ onOpenUploadModal }) => {
+
   const [devices, setDevices] = useState<DeviceItem[]>(initialDevices);
   const [pingingId, setPingingId] = useState<string | null>(null);
 
@@ -113,11 +120,20 @@ export const DevicesView: React.FC = () => {
                         <span>{device.status}</span>
                       </span>
                     </td>
-                    <td className="py-4 px-6 text-right">
+                    <td className="py-4 px-6 text-right flex items-center justify-end gap-2">
+                      {device.id === 'dev-0' && onOpenUploadModal && (
+                        <button
+                          onClick={onOpenUploadModal}
+                          className="font-mono text-xs px-3 py-1 bg-[#00a572]/20 hover:bg-[#00a572]/30 text-[#4edea3] rounded border border-[#4edea3]/40 transition-colors flex items-center gap-1 cursor-pointer"
+                        >
+                          <Upload className="w-3 h-3" />
+                          <span>Upload Log</span>
+                        </button>
+                      )}
                       <button
                         onClick={() => handlePing(device.id)}
                         disabled={pingingId === device.id}
-                        className="font-mono text-xs px-3 py-1 bg-white/5 hover:bg-white/10 text-[#adc6ff] rounded border border-white/10 transition-colors"
+                        className="font-mono text-xs px-3 py-1 bg-white/5 hover:bg-white/10 text-[#adc6ff] rounded border border-white/10 transition-colors cursor-pointer"
                       >
                         {pingingId === device.id ? 'Pinging...' : 'Ping'}
                       </button>

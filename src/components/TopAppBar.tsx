@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, Bell, Zap, Activity, Check, Trash2, X } from 'lucide-react';
+import { Menu, Bell, Zap, Activity, Check, Trash2, X, Upload } from 'lucide-react';
 import { NavTab, AlertItem } from '../types';
 
 interface TopAppBarProps {
@@ -19,6 +19,8 @@ interface TopAppBarProps {
   onResolveAlert?: (id: string) => void;
   onClearAllAlerts?: () => void;
   systemHealth?: 'ONLINE' | 'DEGRADED' | 'MAINTENANCE';
+  onOpenUploadModal?: () => void;
+  uploadedCount?: number;
 }
 
 export const TopAppBar: React.FC<TopAppBarProps> = ({
@@ -38,6 +40,8 @@ export const TopAppBar: React.FC<TopAppBarProps> = ({
   onResolveAlert,
   onClearAllAlerts,
   systemHealth = 'ONLINE',
+  onOpenUploadModal,
+  uploadedCount = 10,
 }) => {
   const [isAlertMenuOpen, setIsAlertMenuOpen] = useState(false);
 
@@ -97,6 +101,18 @@ export const TopAppBar: React.FC<TopAppBarProps> = ({
             <span className="w-1.5 h-1.5 rounded-full bg-[#4edea3] animate-pulse" />
             <span>System {systemHealth}</span>
           </div>
+
+          {/* ESP32 Upload Serial Data Button */}
+          {onOpenUploadModal && (
+            <button
+              onClick={onOpenUploadModal}
+              className="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-lg font-mono text-xs font-bold bg-[#00a572]/20 hover:bg-[#00a572]/30 text-[#4edea3] border border-[#4edea3]/40 shadow-sm transition-all cursor-pointer"
+              title="Upload ESP32 Serial Logs & Sensor Telemetry"
+            >
+              <Upload className="w-3.5 h-3.5" />
+              <span>ESP32 Log ({uploadedCount})</span>
+            </button>
+          )}
 
           {/* Live Stream Switch Badge */}
           <button 
