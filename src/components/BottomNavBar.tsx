@@ -23,15 +23,15 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({
   };
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 h-16 bg-[#171f33]/95 backdrop-blur-lg border-t border-white/10 shadow-[0_-8px_32px_rgba(0,0,0,0.5)] flex justify-around items-center px-4 pb-safe">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 h-16 bg-[#173a28] border-t border-[#0f2a1b] shadow-[0_-4px_16px_rgba(20,36,27,0.18)] flex justify-around items-center px-4 pb-safe">
       {/* Home / Dashboard */}
       <button
         id="mobile-tab-dashboard"
         onClick={() => handleSelect('dashboard')}
-        className={`p-2.5 rounded-full transition-all flex items-center justify-center cursor-pointer ${
+        className={`p-2.5 rounded-xl transition-colors flex items-center justify-center cursor-pointer ${
           current === 'dashboard'
-            ? 'bg-[#00a572] text-[#003824] shadow-lg shadow-[#00a572]/30 scale-105'
-            : 'text-[#c2c6d6] hover:text-[#adc6ff] active:scale-90'
+            ? 'bg-[#cfe0c6] text-[#163626] shadow-[0_1px_2px_rgba(0,0,0,0.15)]'
+            : 'text-[#c9d6c5] hover:text-[#f5f1e6] hover:bg-[#e9efe4]/[0.07]'
         }`}
         aria-label="Dashboard"
       >
@@ -42,10 +42,10 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({
       <button
         id="mobile-tab-occupancy"
         onClick={() => handleSelect('occupancy')}
-        className={`p-2.5 rounded-full transition-all flex items-center justify-center cursor-pointer ${
+        className={`p-2.5 rounded-xl transition-colors flex items-center justify-center cursor-pointer ${
           current === 'occupancy'
-            ? 'bg-[#00a572] text-[#003824] shadow-lg shadow-[#00a572]/30 scale-105'
-            : 'text-[#c2c6d6] hover:text-[#adc6ff] active:scale-90'
+            ? 'bg-[#cfe0c6] text-[#163626] shadow-[0_1px_2px_rgba(0,0,0,0.15)]'
+            : 'text-[#c9d6c5] hover:text-[#f5f1e6] hover:bg-[#e9efe4]/[0.07]'
         }`}
         aria-label="Occupancy"
       >
@@ -56,10 +56,10 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({
       <button
         id="mobile-tab-analytics"
         onClick={() => handleSelect('analytics')}
-        className={`p-2.5 rounded-full transition-all flex items-center justify-center cursor-pointer ${
+        className={`p-2.5 rounded-xl transition-colors flex items-center justify-center cursor-pointer ${
           current === 'analytics'
-            ? 'bg-[#00a572] text-[#003824] shadow-lg shadow-[#00a572]/30 scale-105'
-            : 'text-[#c2c6d6] hover:text-[#adc6ff] active:scale-90'
+            ? 'bg-[#cfe0c6] text-[#163626] shadow-[0_1px_2px_rgba(0,0,0,0.15)]'
+            : 'text-[#c9d6c5] hover:text-[#f5f1e6] hover:bg-[#e9efe4]/[0.07]'
         }`}
         aria-label="Analytics"
       >
@@ -70,10 +70,10 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({
       <button
         id="mobile-tab-insights"
         onClick={() => handleSelect('insights')}
-        className={`p-2.5 rounded-full transition-all flex items-center justify-center cursor-pointer ${
+        className={`p-2.5 rounded-xl transition-colors flex items-center justify-center cursor-pointer ${
           current === 'insights'
-            ? 'bg-[#00a572] text-[#003824] shadow-lg shadow-[#00a572]/30 scale-105'
-            : 'text-[#c2c6d6] hover:text-[#adc6ff] active:scale-90'
+            ? 'bg-[#cfe0c6] text-[#163626] shadow-[0_1px_2px_rgba(0,0,0,0.15)]'
+            : 'text-[#c9d6c5] hover:text-[#f5f1e6] hover:bg-[#e9efe4]/[0.07]'
         }`}
         aria-label="AI Insights"
       >
@@ -84,10 +84,10 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({
       <button
         id="mobile-tab-settings"
         onClick={() => handleSelect('settings')}
-        className={`p-2.5 rounded-full transition-all flex items-center justify-center cursor-pointer ${
+        className={`p-2.5 rounded-xl transition-colors flex items-center justify-center cursor-pointer ${
           current === 'settings' || current === 'load_control' || current === 'digital_twin'
-            ? 'bg-[#00a572] text-[#003824] shadow-lg shadow-[#00a572]/30 scale-105'
-            : 'text-[#c2c6d6] hover:text-[#adc6ff] active:scale-90'
+            ? 'bg-[#cfe0c6] text-[#163626] shadow-[0_1px_2px_rgba(0,0,0,0.15)]'
+            : 'text-[#c9d6c5] hover:text-[#f5f1e6] hover:bg-[#e9efe4]/[0.07]'
         }`}
         aria-label="Settings"
       >

@@ -143,22 +143,22 @@ void loop() {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
-      <div className="relative w-full max-w-4xl bg-[#131b2e] border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#14241b]/50 backdrop-blur-md animate-fadeIn">
+      <div className="relative w-full max-w-4xl bg-[#f4f0e6] border border-[#1c2a22]/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
         {/* Modal Header */}
-        <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-[#0b1326]/60">
+        <div className="px-6 py-4 border-b border-[#1c2a22]/10 flex items-center justify-between bg-[#f5f1e6]/60">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#00a572]/20 border border-[#4edea3]/40 flex items-center justify-center text-[#4edea3]">
+            <div className="w-10 h-10 rounded-xl bg-[#2f6b44]/20 border border-[#3d7a4e]/40 flex items-center justify-center text-[#3d7a4e]">
               <Upload className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="font-sans font-bold text-lg text-[#dae2fd] flex items-center gap-2">
+              <h2 className="font-sans font-bold text-lg text-[#1c2a22] flex items-center gap-2">
                 <span>ESP32 Multi-Sensor Serial Data Upload</span>
-                <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#4edea3]/20 text-[#4edea3] border border-[#4edea3]/30">
+                <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#3d7a4e]/20 text-[#3d7a4e] border border-[#3d7a4e]/30">
                   Live Terminal
                 </span>
               </h2>
-              <p className="font-sans text-xs text-[#c2c6d6]">
+              <p className="font-sans text-xs text-[#56655b]">
                 Upload, parse, and synchronize raw ESP32 serial logs directly into EnergyCore telemetry dashboard.
               </p>
             </div>
@@ -166,20 +166,20 @@ void loop() {
 
           <button
             onClick={onClose}
-            className="p-2 text-[#c2c6d6] hover:text-white rounded-lg hover:bg-white/5 transition-colors cursor-pointer"
+            className="p-2 text-[#56655b] hover:text-[#1c2a22] rounded-lg hover:bg-[#1c2a22]/[0.07] transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex items-center gap-2 px-6 pt-3 border-b border-white/10 bg-[#0b1326]/30 font-mono text-xs">
+        <div className="flex items-center gap-2 px-6 pt-3 border-b border-[#1c2a22]/10 bg-[#f5f1e6]/30 font-mono text-xs">
           <button
             onClick={() => setActiveTab('upload')}
             className={`px-4 py-2.5 rounded-t-lg transition-colors flex items-center gap-2 cursor-pointer ${
               activeTab === 'upload'
-                ? 'bg-[#131b2e] text-[#4edea3] font-bold border-t-2 border-[#4edea3]'
-                : 'text-[#c2c6d6]/70 hover:text-white'
+                ? 'bg-[#f4f0e6] text-[#3d7a4e] font-bold border-t-2 border-[#3d7a4e]'
+                : 'text-[#56655b] hover:text-[#1c2a22]'
             }`}
           >
             <Terminal className="w-4 h-4" />
@@ -190,8 +190,8 @@ void loop() {
             onClick={() => setActiveTab('view_samples')}
             className={`px-4 py-2.5 rounded-t-lg transition-colors flex items-center gap-2 cursor-pointer ${
               activeTab === 'view_samples'
-                ? 'bg-[#131b2e] text-[#4edea3] font-bold border-t-2 border-[#4edea3]'
-                : 'text-[#c2c6d6]/70 hover:text-white'
+                ? 'bg-[#f4f0e6] text-[#3d7a4e] font-bold border-t-2 border-[#3d7a4e]'
+                : 'text-[#56655b] hover:text-[#1c2a22]'
             }`}
           >
             <Activity className="w-4 h-4" />
@@ -202,8 +202,8 @@ void loop() {
             onClick={() => setActiveTab('esp32_code')}
             className={`px-4 py-2.5 rounded-t-lg transition-colors flex items-center gap-2 cursor-pointer ${
               activeTab === 'esp32_code'
-                ? 'bg-[#131b2e] text-[#4edea3] font-bold border-t-2 border-[#4edea3]'
-                : 'text-[#c2c6d6]/70 hover:text-white'
+                ? 'bg-[#f4f0e6] text-[#3d7a4e] font-bold border-t-2 border-[#3d7a4e]'
+                : 'text-[#56655b] hover:text-[#1c2a22]'
             }`}
           >
             <Cpu className="w-4 h-4" />
@@ -216,8 +216,8 @@ void loop() {
           {statusMessage && (
             <div className={`p-3.5 rounded-xl border text-xs font-mono flex items-center gap-2 ${
               statusMessage.startsWith('Error')
-                ? 'bg-[#93000a]/20 text-[#ffb4ab] border-[#ffb4ab]/30'
-                : 'bg-[#00a572]/20 text-[#4edea3] border-[#4edea3]/30'
+                ? 'bg-[#b4423a]/20 text-[#b4423a] border-[#b4423a]/30'
+                : 'bg-[#2f6b44]/20 text-[#3d7a4e] border-[#3d7a4e]/30'
             }`}>
               {statusMessage.startsWith('Error') ? <AlertCircle className="w-4 h-4" /> : <CheckCircle2 className="w-4 h-4" />}
               <span>{statusMessage}</span>
@@ -227,15 +227,15 @@ void loop() {
           {activeTab === 'upload' && (
             <div className="space-y-4">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-                <label className="font-mono text-xs text-[#adc6ff] flex items-center gap-1.5">
-                  <Terminal className="w-4 h-4 text-[#4edea3]" />
+                <label className="font-mono text-xs text-[#1f4632] flex items-center gap-1.5">
+                  <Terminal className="w-4 h-4 text-[#3d7a4e]" />
                   <span>Paste ESP32 Serial Output Log Below:</span>
                 </label>
 
                 <div className="flex items-center gap-2">
                   <button
                     onClick={handleLoadSampleLog}
-                    className="font-mono text-[11px] px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-[#adc6ff] border border-white/10 transition-colors flex items-center gap-1 cursor-pointer"
+                    className="font-mono text-[11px] px-3 py-1.5 rounded-lg bg-[#1c2a22]/[0.07] hover:bg-[#1c2a22]/10 text-[#1f4632] border border-[#1c2a22]/10 transition-colors flex items-center gap-1 cursor-pointer"
                   >
                     <RefreshCw className="w-3.5 h-3.5" />
                     <span>Load 10-Sample Dataset</span>
@@ -243,9 +243,9 @@ void loop() {
 
                   <button
                     onClick={handleCopyLog}
-                    className="font-mono text-[11px] px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-[#adc6ff] border border-white/10 transition-colors flex items-center gap-1 cursor-pointer"
+                    className="font-mono text-[11px] px-3 py-1.5 rounded-lg bg-[#1c2a22]/[0.07] hover:bg-[#1c2a22]/10 text-[#1f4632] border border-[#1c2a22]/10 transition-colors flex items-center gap-1 cursor-pointer"
                   >
-                    {copied ? <Check className="w-3.5 h-3.5 text-[#4edea3]" /> : <Copy className="w-3.5 h-3.5" />}
+                    {copied ? <Check className="w-3.5 h-3.5 text-[#3d7a4e]" /> : <Copy className="w-3.5 h-3.5" />}
                     <span>{copied ? 'Copied!' : 'Copy'}</span>
                   </button>
                 </div>
@@ -256,18 +256,18 @@ void loop() {
                 onChange={(e) => handleTextChange(e.target.value)}
                 placeholder="Paste Serial monitor text from ESP32 here..."
                 rows={12}
-                className="w-full bg-[#0b1326] text-[#4edea3] font-mono text-xs p-4 rounded-xl border border-white/10 focus:border-[#4edea3] focus:ring-1 focus:ring-[#4edea3] outline-none transition-all shadow-inner leading-relaxed resize-none"
+                className="w-full bg-[#f5f1e6] text-[#3d7a4e] font-mono text-xs p-4 rounded-xl border border-[#1c2a22]/10 focus:border-[#3d7a4e] focus:ring-1 focus:ring-[#3d7a4e] outline-none transition-all shadow-inner leading-relaxed resize-none"
               />
 
               {/* Realtime Parse Result Summary */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#0b1326]/50 p-4 rounded-xl border border-white/10 font-mono text-xs">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#f5f1e6]/50 p-4 rounded-xl border border-[#1c2a22]/10 font-mono text-xs">
                 <div>
-                  <span className="text-[#c2c6d6]/60 text-[10px] block uppercase">Parsed Frames</span>
-                  <span className="text-base font-bold text-[#4edea3]">{parsedPreview.length} Samples</span>
+                  <span className="text-[#56655b] text-[10px] block uppercase">Parsed Frames</span>
+                  <span className="text-base font-bold text-[#3d7a4e]">{parsedPreview.length} Samples</span>
                 </div>
                 <div>
-                  <span className="text-[#c2c6d6]/60 text-[10px] block uppercase">Temp Range</span>
-                  <span className="text-base font-bold text-[#dae2fd]">
+                  <span className="text-[#56655b] text-[10px] block uppercase">Temp Range</span>
+                  <span className="text-base font-bold text-[#1c2a22]">
                     {parsedPreview.length > 0
                       ? `${Math.min(...parsedPreview.map((p) => p.dht22Temp))}°C - ${Math.max(
                           ...parsedPreview.map((p) => p.dht22Temp)
@@ -276,8 +276,8 @@ void loop() {
                   </span>
                 </div>
                 <div>
-                  <span className="text-[#c2c6d6]/60 text-[10px] block uppercase">CO2 Range</span>
-                  <span className="text-base font-bold text-[#ffb95f]">
+                  <span className="text-[#56655b] text-[10px] block uppercase">CO2 Range</span>
+                  <span className="text-base font-bold text-[#8a5f14]">
                     {parsedPreview.length > 0
                       ? `${Math.min(...parsedPreview.map((p) => p.co2Ppm))} - ${Math.max(
                           ...parsedPreview.map((p) => p.co2Ppm)
@@ -286,8 +286,8 @@ void loop() {
                   </span>
                 </div>
                 <div>
-                  <span className="text-[#c2c6d6]/60 text-[10px] block uppercase">Motion Events</span>
-                  <span className="text-base font-bold text-[#adc6ff]">
+                  <span className="text-[#56655b] text-[10px] block uppercase">Motion Events</span>
+                  <span className="text-base font-bold text-[#1f4632]">
                     {parsedPreview.filter((p) => p.motion).length} Detected
                   </span>
                 </div>
@@ -297,15 +297,15 @@ void loop() {
 
           {activeTab === 'view_samples' && (
             <div className="space-y-4">
-              <div className="flex items-center justify-between font-sans text-xs text-[#c2c6d6]">
+              <div className="flex items-center justify-between font-sans text-xs text-[#56655b]">
                 <span>Extracted Multi-Sensor Telemetry Records ({parsedPreview.length} frames)</span>
-                <span className="font-mono text-[#4edea3]">Sensor Nodes: DHT22, BME280, MQ135, PIR, LDR</span>
+                <span className="font-mono text-[#3d7a4e]">Sensor Nodes: DHT22, BME280, MQ135, PIR, LDR</span>
               </div>
 
-              <div className="overflow-x-auto border border-white/10 rounded-xl bg-[#0b1326]/40">
+              <div className="overflow-x-auto border border-[#1c2a22]/10 rounded-xl bg-[#f5f1e6]/40">
                 <table className="w-full text-left font-mono text-xs border-collapse">
                   <thead>
-                    <tr className="border-b border-white/10 bg-[#131b2e] text-[#c2c6d6]/70 uppercase tracking-wider text-[11px]">
+                    <tr className="border-b border-[#1c2a22]/10 bg-[#f4f0e6] text-[#56655b] uppercase tracking-wider text-[11px]">
                       <th className="p-3">#</th>
                       <th className="p-3">DHT22 Temp / Hum</th>
                       <th className="p-3">BME280 Temp / Hum</th>
@@ -315,26 +315,26 @@ void loop() {
                       <th className="p-3">Motion</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-white/5 text-[#dae2fd]">
+                  <tbody className="divide-y divide-[#1c2a22]/[0.07] text-[#1c2a22]">
                     {parsedPreview.map((sample, idx) => (
-                      <tr key={sample.id} className="hover:bg-white/5 transition-colors">
-                        <td className="p-3 text-[#c2c6d6]/60">{sample.sampleIndex}</td>
-                        <td className="p-3 text-[#4edea3]">
+                      <tr key={sample.id} className="hover:bg-[#1c2a22]/[0.07] transition-colors">
+                        <td className="p-3 text-[#56655b]">{sample.sampleIndex}</td>
+                        <td className="p-3 text-[#3d7a4e]">
                           {sample.dht22Temp.toFixed(2)} °C / {sample.dht22Humidity.toFixed(2)}%
                         </td>
-                        <td className="p-3 text-[#adc6ff]">
+                        <td className="p-3 text-[#1f4632]">
                           {sample.bme280Temp.toFixed(2)} °C / {sample.bme280Humidity.toFixed(2)}%
                         </td>
-                        <td className="p-3 text-[#c2c6d6]">{sample.bme280Pressure.toFixed(2)} hPa</td>
-                        <td className="p-3 text-[#ffb95f] font-bold">{sample.co2Ppm} ppm</td>
-                        <td className="p-3 text-[#dae2fd]">{sample.ambientLightLux.toFixed(1)} lux</td>
+                        <td className="p-3 text-[#56655b]">{sample.bme280Pressure.toFixed(2)} hPa</td>
+                        <td className="p-3 text-[#8a5f14] font-bold">{sample.co2Ppm} ppm</td>
+                        <td className="p-3 text-[#1c2a22]">{sample.ambientLightLux.toFixed(1)} lux</td>
                         <td className="p-3">
                           {sample.motion ? (
-                            <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#ffb95f]/20 text-[#ffb95f] border border-[#ffb95f]/40 animate-pulse">
+                            <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#a8741a]/20 text-[#8a5f14] border border-[#a8741a]/40 animate-pulse">
                               DETECTED!
                             </span>
                           ) : (
-                            <span className="px-2 py-0.5 rounded text-[10px] text-[#c2c6d6]/50 bg-white/5">
+                            <span className="px-2 py-0.5 rounded text-[10px] text-[#56655b] bg-[#1c2a22]/[0.07]">
                               No Motion
                             </span>
                           )}
@@ -350,19 +350,19 @@ void loop() {
           {activeTab === 'esp32_code' && (
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <p className="font-sans text-xs text-[#c2c6d6]">
+                <p className="font-sans text-xs text-[#56655b]">
                   Upload telemetry directly to EnergyCore AI via ESP32 Wi-Fi / Serial monitor stream using this C++ Arduino code.
                 </p>
                 <button
                   onClick={handleCopyCode}
-                  className="font-mono text-xs px-3 py-1.5 rounded-lg bg-[#adc6ff]/10 hover:bg-[#adc6ff]/20 text-[#adc6ff] border border-[#adc6ff]/30 transition-colors flex items-center gap-1.5 cursor-pointer"
+                  className="font-mono text-xs px-3 py-1.5 rounded-lg bg-[#1f4632]/10 hover:bg-[#1f4632]/20 text-[#1f4632] border border-[#1f4632]/30 transition-colors flex items-center gap-1.5 cursor-pointer"
                 >
-                  {copiedCode ? <Check className="w-3.5 h-3.5 text-[#4edea3]" /> : <Copy className="w-3.5 h-3.5" />}
+                  {copiedCode ? <Check className="w-3.5 h-3.5 text-[#3d7a4e]" /> : <Copy className="w-3.5 h-3.5" />}
                   <span>{copiedCode ? 'Code Copied!' : 'Copy Sketch Code'}</span>
                 </button>
               </div>
 
-              <pre className="bg-[#0b1326] text-[#adc6ff] font-mono text-xs p-4 rounded-xl border border-white/10 overflow-x-auto max-h-80 leading-relaxed">
+              <pre className="bg-[#f5f1e6] text-[#1f4632] font-mono text-xs p-4 rounded-xl border border-[#1c2a22]/10 overflow-x-auto max-h-80 leading-relaxed">
                 <code>{sampleArduinoCode}</code>
               </pre>
             </div>
@@ -370,22 +370,22 @@ void loop() {
         </div>
 
         {/* Modal Footer */}
-        <div className="px-6 py-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 bg-[#0b1326]/60">
-          <div className="font-mono text-xs text-[#c2c6d6]/80">
-            Status: <span className="text-[#4edea3]">{parsedPreview.length} Valid ESP32 Sensor Frames Ready</span>
+        <div className="px-6 py-4 border-t border-[#1c2a22]/10 flex flex-col sm:flex-row items-center justify-between gap-3 bg-[#f5f1e6]/60">
+          <div className="font-mono text-xs text-[#56655b]">
+            Status: <span className="text-[#3d7a4e]">{parsedPreview.length} Valid ESP32 Sensor Frames Ready</span>
           </div>
 
           <div className="flex items-center gap-3 w-full sm:w-auto">
             <button
               onClick={onClose}
-              className="flex-1 sm:flex-none font-mono text-xs px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-[#c2c6d6] border border-white/10 transition-colors cursor-pointer"
+              className="flex-1 sm:flex-none font-mono text-xs px-4 py-2 rounded-xl bg-[#1c2a22]/[0.07] hover:bg-[#1c2a22]/10 text-[#56655b] border border-[#1c2a22]/10 transition-colors cursor-pointer"
             >
               Cancel
             </button>
             <button
               onClick={handleApplyUpload}
               disabled={parsedPreview.length === 0}
-              className="flex-1 sm:flex-none font-mono text-xs px-5 py-2 rounded-xl bg-gradient-to-r from-[#00a572] to-[#004395] hover:opacity-90 text-white font-bold shadow-lg shadow-[#00a572]/20 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+              className="flex-1 sm:flex-none font-mono text-xs px-5 py-2 rounded-xl bg-[#1f4632] hover:opacity-90 text-white font-bold shadow-lg shadow-[#1f3d2b]/10 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
             >
               <Upload className="w-4 h-4" />
               <span>Upload Telemetry ({parsedPreview.length} Samples)</span>

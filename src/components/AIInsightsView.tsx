@@ -64,10 +64,10 @@ export const AIInsightsView: React.FC<AIInsightsViewProps> = ({ onShedLoadTrigge
     <div className="space-y-6 animate-fadeIn pb-8">
       {/* Header */}
       <div>
-        <h1 className="font-sans font-bold text-2xl md:text-3xl text-[#dae2fd] tracking-tight">
+        <h1 className="font-sans font-bold text-2xl md:text-3xl text-[#1c2a22] tracking-tight">
           AI Insights & Predictions
         </h1>
-        <p className="font-sans text-sm text-[#c2c6d6] mt-0.5 max-w-2xl">
+        <p className="font-sans text-sm text-[#56655b] mt-0.5 max-w-2xl">
           Real-time intelligence and automated recommendations for optimal energy performance.
         </p>
       </div>
@@ -76,41 +76,41 @@ export const AIInsightsView: React.FC<AIInsightsViewProps> = ({ onShedLoadTrigge
       <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
         {/* Left: AI Decision Cards (8 cols on desktop) */}
         <div className="md:col-span-8 flex flex-col gap-4">
-          <div className="font-mono text-xs text-[#4edea3] uppercase tracking-widest flex items-center gap-2 font-semibold">
+          <div className="font-mono text-xs text-[#3d7a4e] uppercase tracking-widest flex items-center gap-2 font-semibold">
             <Cpu className="w-4 h-4" />
             <span>ACTIVE RECOMMENDATIONS</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Card 1: Room 101 */}
-            <div className="glass-card rounded-xl p-5 md:p-6 flex flex-col relative overflow-hidden group hover:bg-[#222a3d]/80 transition-all border border-white/10 shadow-xl">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#4edea3] to-[#adc6ff] opacity-70" />
+            <div className="glass-card rounded-xl p-5 md:p-6 flex flex-col relative overflow-hidden group hover:bg-[#eee9dc]/80 transition-all border border-[#1c2a22]/10 shadow-xl">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#3d7a4e] to-[#1f4632] opacity-70" />
               
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h4 className="font-sans font-bold text-lg text-[#dae2fd]">Room 101</h4>
-                  <p className="font-mono text-xs text-[#c2c6d6]/70">Conference A</p>
+                  <h4 className="font-sans font-bold text-lg text-[#1c2a22]">Room 101</h4>
+                  <p className="font-mono text-xs text-[#56655b]">Conference A</p>
                 </div>
-                <span className="bg-[#00a572]/15 text-[#4edea3] font-mono text-[11px] px-2.5 py-1 rounded border border-[#4edea3]/30 font-semibold flex items-center gap-1">
+                <span className="bg-[#2f6b44]/15 text-[#3d7a4e] font-mono text-[11px] px-2.5 py-1 rounded border border-[#3d7a4e]/30 font-semibold flex items-center gap-1">
                   <Sparkles className="w-3 h-3" /> Optimization
                 </span>
               </div>
 
-              <p className="font-sans text-sm text-[#dae2fd] mb-6 flex-1 leading-relaxed">
-                <span className="font-bold text-[#adc6ff] text-glow-primary">AI Recommendation:</span>{' '}
+              <p className="font-sans text-sm text-[#1c2a22] mb-6 flex-1 leading-relaxed">
+                <span className="font-bold text-[#1f4632] text-glow-primary">AI Recommendation:</span>{' '}
                 Turn ON AC, Keep Lights ON.
               </p>
 
-              <div className="mt-auto pt-3 border-t border-white/5 flex items-center justify-between">
-                <span className="font-mono text-xs text-[#c2c6d6]/70">Confidence: 94%</span>
+              <div className="mt-auto pt-3 border-t border-[#1c2a22]/[0.07] flex items-center justify-between">
+                <span className="font-mono text-xs text-[#56655b]">Confidence: 94%</span>
                 <button
                   id="apply-rec-1-btn"
                   onClick={() => handleApplyRecommendation('rec-1')}
                   disabled={recommendations[0]?.applied}
                   className={`font-mono text-xs px-3.5 py-1.5 rounded transition-colors flex items-center gap-1 ${
                     recommendations[0]?.applied
-                      ? 'bg-[#00a572]/30 text-[#4edea3] cursor-default'
-                      : 'bg-[#4d8eff] hover:bg-[#adc6ff] text-[#00285d] font-bold shadow-md shadow-[#4d8eff]/20'
+                      ? 'bg-[#2f6b44]/30 text-[#3d7a4e] cursor-default'
+                      : 'bg-[#2c5e43] hover:bg-[#1f4632] text-[#fdfbf6] font-bold shadow-md shadow-[#1f3d2b]/10'
                   }`}
                 >
                   {recommendations[0]?.applied ? (
@@ -126,29 +126,29 @@ export const AIInsightsView: React.FC<AIInsightsViewProps> = ({ onShedLoadTrigge
             </div>
 
             {/* Card 2: HVAC Sector 3 */}
-            <div className="glass-card rounded-xl p-5 md:p-6 flex flex-col relative overflow-hidden group hover:bg-[#222a3d]/80 transition-all border border-white/10 shadow-xl">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#ffb95f] to-[#ffb4ab] opacity-70" />
+            <div className="glass-card rounded-xl p-5 md:p-6 flex flex-col relative overflow-hidden group hover:bg-[#eee9dc]/80 transition-all border border-[#1c2a22]/10 shadow-xl">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#a8741a] to-[#b4423a] opacity-70" />
               
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h4 className="font-sans font-bold text-lg text-[#dae2fd]">HVAC Sector 3</h4>
-                  <p className="font-mono text-xs text-[#c2c6d6]/70">South Wing</p>
+                  <h4 className="font-sans font-bold text-lg text-[#1c2a22]">HVAC Sector 3</h4>
+                  <p className="font-mono text-xs text-[#56655b]">South Wing</p>
                 </div>
-                <span className="bg-[#ca8100]/15 text-[#ffb95f] font-mono text-[11px] px-2.5 py-1 rounded border border-[#ffb95f]/30 font-semibold flex items-center gap-1">
+                <span className="bg-[#b8862f]/15 text-[#8a5f14] font-mono text-[11px] px-2.5 py-1 rounded border border-[#a8741a]/30 font-semibold flex items-center gap-1">
                   <Search className="w-3 h-3" /> Anomaly Detection
                 </span>
               </div>
 
-              <p className="font-sans text-sm text-[#dae2fd] mb-6 flex-1 leading-relaxed">
+              <p className="font-sans text-sm text-[#1c2a22] mb-6 flex-1 leading-relaxed">
                 Unusual power draw detected. Potential compressor inefficiency or blockage.
               </p>
 
-              <div className="mt-auto pt-3 border-t border-white/5 flex items-center justify-between">
-                <span className="font-mono text-xs text-[#c2c6d6]/70">Detected 12m ago</span>
+              <div className="mt-auto pt-3 border-t border-[#1c2a22]/[0.07] flex items-center justify-between">
+                <span className="font-mono text-xs text-[#56655b]">Detected 12m ago</span>
                 <button
                   id="investigate-rec-2-btn"
                   onClick={() => setInvestigatingRec(recommendations[1])}
-                  className="bg-[#31394d] hover:bg-[#2d3449] text-[#dae2fd] font-mono text-xs px-3.5 py-1.5 rounded transition-colors border border-white/10"
+                  className="bg-[#dfd8c8] hover:bg-[#e7e1d3] text-[#1c2a22] font-mono text-xs px-3.5 py-1.5 rounded transition-colors border border-[#1c2a22]/10"
                 >
                   Investigate
                 </button>
@@ -156,28 +156,28 @@ export const AIInsightsView: React.FC<AIInsightsViewProps> = ({ onShedLoadTrigge
             </div>
 
             {/* Card 3: Campus Wide (Span 2 cols on md) */}
-            <div className="glass-card rounded-xl p-5 md:p-6 flex flex-col relative overflow-hidden group hover:bg-[#222a3d]/80 transition-all md:col-span-2 border border-white/10 shadow-xl">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#adc6ff] to-[#4edea3] opacity-70" />
+            <div className="glass-card rounded-xl p-5 md:p-6 flex flex-col relative overflow-hidden group hover:bg-[#eee9dc]/80 transition-all md:col-span-2 border border-[#1c2a22]/10 shadow-xl">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1f4632] to-[#3d7a4e] opacity-70" />
               
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h4 className="font-sans font-bold text-lg text-[#dae2fd]">Campus Wide</h4>
-                  <p className="font-mono text-xs text-[#c2c6d6]/70">Global Optimization</p>
+                  <h4 className="font-sans font-bold text-lg text-[#1c2a22]">Campus Wide</h4>
+                  <p className="font-mono text-xs text-[#56655b]">Global Optimization</p>
                 </div>
-                <span className="bg-[#004395]/20 text-[#adc6ff] font-mono text-[11px] px-2.5 py-1 rounded border border-[#adc6ff]/30 font-semibold flex items-center gap-1">
+                <span className="bg-[#1f4632]/20 text-[#1f4632] font-mono text-[11px] px-2.5 py-1 rounded border border-[#1f4632]/30 font-semibold flex items-center gap-1">
                   <TrendingUp className="w-3 h-3" /> Prediction
                 </span>
               </div>
 
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <p className="font-sans text-sm text-[#dae2fd] flex-1 leading-relaxed">
-                  Peak-demand predicted at <span className="font-bold text-[#ffb95f] text-glow-tertiary">2:00 PM</span> - load shedding recommended to avoid tier 2 pricing surge.
+                <p className="font-sans text-sm text-[#1c2a22] flex-1 leading-relaxed">
+                  Peak-demand predicted at <span className="font-bold text-[#8a5f14] text-glow-tertiary">2:00 PM</span> - load shedding recommended to avoid tier 2 pricing surge.
                 </p>
 
                 <div className="flex items-center gap-2.5">
                   <button
                     onClick={() => setInvestigatingRec(recommendations[2])}
-                    className="bg-transparent text-[#adc6ff] font-mono text-xs px-3.5 py-2 rounded-lg hover:bg-[#adc6ff]/10 transition-colors border border-[#adc6ff]/30 whitespace-nowrap"
+                    className="bg-transparent text-[#1f4632] font-mono text-xs px-3.5 py-2 rounded-lg hover:bg-[#1f4632]/10 transition-colors border border-[#1f4632]/30 whitespace-nowrap"
                   >
                     Review Schedule
                   </button>
@@ -187,8 +187,8 @@ export const AIInsightsView: React.FC<AIInsightsViewProps> = ({ onShedLoadTrigge
                     onClick={handleAutoShed}
                     className={`font-mono text-xs px-4 py-2 rounded-lg font-bold transition-all ambient-glow whitespace-nowrap flex items-center gap-1.5 ${
                       autoShedApplied
-                        ? 'bg-[#00a572] text-[#003824]'
-                        : 'bg-[#adc6ff] hover:bg-[#d8e2ff] text-[#002e6a]'
+                        ? 'bg-[#2f6b44] text-[#fdfbf6]'
+                        : 'bg-[#1f4632] hover:bg-[#163626] text-[#fdfbf6]'
                     }`}
                   >
                     {autoShedApplied ? (
@@ -212,19 +212,19 @@ export const AIInsightsView: React.FC<AIInsightsViewProps> = ({ onShedLoadTrigge
         {/* Right: Forecast Chart & Shifts (4 cols on desktop) */}
         <div className="md:col-span-4 flex flex-col gap-4 md:gap-6">
           {/* Demand Forecast Chart */}
-          <div className="glass-card rounded-xl p-5 md:p-6 flex flex-col min-h-[300px] border border-white/10 shadow-xl">
-            <h3 className="font-mono text-xs text-[#c2c6d6] uppercase tracking-widest mb-4 flex items-center gap-2">
-              <Activity className="w-4 h-4 text-[#4edea3]" />
+          <div className="glass-card rounded-xl p-5 md:p-6 flex flex-col min-h-[300px] border border-[#1c2a22]/10 shadow-xl">
+            <h3 className="font-mono text-xs text-[#56655b] uppercase tracking-widest mb-4 flex items-center gap-2">
+              <Activity className="w-4 h-4 text-[#3d7a4e]" />
               <span>DEMAND FORECAST</span>
             </h3>
 
             <div className="flex-1 relative w-full flex flex-col justify-end">
               {/* Grid Lines */}
               <div className="absolute inset-0 flex flex-col justify-between py-2 pointer-events-none opacity-20">
-                <div className="border-b border-white/30 w-full" />
-                <div className="border-b border-white/30 w-full" />
-                <div className="border-b border-white/30 w-full" />
-                <div className="border-b border-white/30 w-full" />
+                <div className="border-b border-[#1c2a22]/12 w-full" />
+                <div className="border-b border-[#1c2a22]/12 w-full" />
+                <div className="border-b border-[#1c2a22]/12 w-full" />
+                <div className="border-b border-[#1c2a22]/12 w-full" />
               </div>
 
               {/* Sparkline Graphic */}
@@ -232,8 +232,8 @@ export const AIInsightsView: React.FC<AIInsightsViewProps> = ({ onShedLoadTrigge
                 <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 50">
                   <defs>
                     <linearGradient id="forecastGrad" x1="0%" x2="0%" y1="0%" y2="100%">
-                      <stop offset="0%" stopColor="#4edea3" stopOpacity="0.4" />
-                      <stop offset="100%" stopColor="#4edea3" stopOpacity="0.0" />
+                      <stop offset="0%" stopColor="#3d7a4e" stopOpacity="0.4" />
+                      <stop offset="100%" stopColor="#3d7a4e" stopOpacity="0.0" />
                     </linearGradient>
                   </defs>
 
@@ -247,37 +247,37 @@ export const AIInsightsView: React.FC<AIInsightsViewProps> = ({ onShedLoadTrigge
                   <path
                     d="M0,40 L10,35 L20,38 L30,20 L40,25 L50,10 L60,15 L70,5 L80,20 L90,25 L100,10"
                     fill="none"
-                    stroke="#4edea3"
+                    stroke="#3d7a4e"
                     strokeWidth="2.5"
                   />
 
                   {/* Prediction Peak Marker at 2:00 PM */}
-                  <circle cx="70" cy="5" r="3.5" fill="#ffb95f" className="animate-pulse" />
+                  <circle cx="70" cy="5" r="3.5" fill="#a8741a" className="animate-pulse" />
                   <line
                     x1="70"
                     y1="5"
                     x2="70"
                     y2="50"
-                    stroke="#ffb95f"
+                    stroke="#a8741a"
                     strokeWidth="1.5"
                     strokeDasharray="2,2"
                   />
                 </svg>
               </div>
 
-              <div className="flex justify-between mt-3 font-mono text-[11px] text-[#c2c6d6]/60">
+              <div className="flex justify-between mt-3 font-mono text-[11px] text-[#56655b]">
                 <span>Now</span>
                 <span>+2h</span>
-                <span className="text-[#ffb95f] font-bold">2:00 PM (Peak)</span>
+                <span className="text-[#8a5f14] font-bold">2:00 PM (Peak)</span>
                 <span>+6h</span>
               </div>
             </div>
           </div>
 
           {/* Load Scheduling & Upcoming Shifts */}
-          <div className="glass-card rounded-xl p-5 md:p-6 flex flex-col border border-white/10 shadow-xl">
-            <h3 className="font-mono text-xs text-[#c2c6d6] uppercase tracking-widest mb-4 flex items-center gap-2">
-              <Clock className="w-4 h-4 text-[#adc6ff]" />
+          <div className="glass-card rounded-xl p-5 md:p-6 flex flex-col border border-[#1c2a22]/10 shadow-xl">
+            <h3 className="font-mono text-xs text-[#56655b] uppercase tracking-widest mb-4 flex items-center gap-2">
+              <Clock className="w-4 h-4 text-[#1f4632]" />
               <span>UPCOMING SHIFTS</span>
             </h3>
 
@@ -285,23 +285,23 @@ export const AIInsightsView: React.FC<AIInsightsViewProps> = ({ onShedLoadTrigge
               {shifts.map((shift) => (
                 <li
                   key={shift.id}
-                  className="flex items-center justify-between p-2.5 rounded-lg hover:bg-white/5 transition-colors border border-transparent hover:border-white/5"
+                  className="flex items-center justify-between p-2.5 rounded-lg hover:bg-[#1c2a22]/[0.07] transition-colors border border-transparent hover:border-[#1c2a22]/[0.07]"
                 >
                   <div className="flex items-center gap-3">
                     <div
                       className={`w-2.5 h-2.5 rounded-full ${
                         shift.statusColor === 'secondary'
-                          ? 'bg-[#4edea3]'
+                          ? 'bg-[#3d7a4e]'
                           : shift.statusColor === 'tertiary'
-                          ? 'bg-[#ffb95f]'
-                          : 'bg-[#adc6ff]'
+                          ? 'bg-[#a8741a]'
+                          : 'bg-[#1f4632]'
                       }`}
                     />
                     <div>
-                      <div className="font-sans text-sm font-semibold text-[#dae2fd]">
+                      <div className="font-sans text-sm font-semibold text-[#1c2a22]">
                         {shift.title}
                       </div>
-                      <div className="font-mono text-[11px] text-[#c2c6d6]/60">
+                      <div className="font-mono text-[11px] text-[#56655b]">
                         {shift.time} • {shift.zone}
                       </div>
                     </div>
@@ -311,7 +311,7 @@ export const AIInsightsView: React.FC<AIInsightsViewProps> = ({ onShedLoadTrigge
                     onClick={() => {
                       alert(`Shift Config for "${shift.title}": ${shift.action}`);
                     }}
-                    className="p-1 rounded text-[#c2c6d6] hover:text-[#adc6ff] transition-colors"
+                    className="p-1 rounded text-[#56655b] hover:text-[#1f4632] transition-colors"
                   >
                     <Edit3 className="w-3.5 h-3.5" />
                   </button>
@@ -321,7 +321,7 @@ export const AIInsightsView: React.FC<AIInsightsViewProps> = ({ onShedLoadTrigge
               <li
                 id="add-manual-shift-btn"
                 onClick={() => setIsAddShiftOpen(true)}
-                className="flex items-center justify-center p-2.5 rounded-lg border border-dashed border-[#8c909f]/40 hover:bg-[#2d3449]/40 transition-colors cursor-pointer text-[#c2c6d6] hover:text-white"
+                className="flex items-center justify-center p-2.5 rounded-lg border border-dashed border-[#8a958c]/40 hover:bg-[#e7e1d3]/40 transition-colors cursor-pointer text-[#56655b] hover:text-[#1c2a22]"
               >
                 <span className="font-mono text-xs flex items-center gap-1.5">
                   <Plus className="w-3.5 h-3.5" />
@@ -335,34 +335,34 @@ export const AIInsightsView: React.FC<AIInsightsViewProps> = ({ onShedLoadTrigge
 
       {/* Investigation Modal */}
       {investigatingRec && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-fadeIn">
-          <div className="glass-card rounded-2xl max-w-lg w-full p-6 border border-white/10 shadow-2xl relative">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#14241b]/50 backdrop-blur-sm animate-fadeIn">
+          <div className="glass-card rounded-2xl max-w-lg w-full p-6 border border-[#1c2a22]/10 shadow-2xl relative">
             <button
               onClick={() => setInvestigatingRec(null)}
-              className="absolute top-4 right-4 text-[#c2c6d6] hover:text-white p-1 rounded-md"
+              className="absolute top-4 right-4 text-[#56655b] hover:text-[#1c2a22] p-1 rounded-md"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <div className="flex items-center gap-3 mb-4 text-[#ffb95f]">
+            <div className="flex items-center gap-3 mb-4 text-[#8a5f14]">
               <AlertCircle className="w-6 h-6" />
-              <h3 className="font-sans font-bold text-lg text-[#dae2fd]">
+              <h3 className="font-sans font-bold text-lg text-[#1c2a22]">
                 Telemetry Deep Dive: {investigatingRec.target}
               </h3>
             </div>
 
-            <div className="space-y-4 font-sans text-sm text-[#c2c6d6]">
-              <p className="font-medium text-[#dae2fd]">{investigatingRec.headline}</p>
-              <div className="bg-[#131b2e] p-3 rounded-lg border border-white/5 font-mono text-xs space-y-1">
-                <div><span className="text-[#8c909f]">Location:</span> {investigatingRec.location}</div>
-                <div><span className="text-[#8c909f]">Diagnostic Type:</span> {investigatingRec.type}</div>
-                <div><span className="text-[#8c909f]">Diagnosis:</span> {investigatingRec.description}</div>
+            <div className="space-y-4 font-sans text-sm text-[#56655b]">
+              <p className="font-medium text-[#1c2a22]">{investigatingRec.headline}</p>
+              <div className="bg-[#f4f0e6] p-3 rounded-lg border border-[#1c2a22]/[0.07] font-mono text-xs space-y-1">
+                <div><span className="text-[#737e76]">Location:</span> {investigatingRec.location}</div>
+                <div><span className="text-[#737e76]">Diagnostic Type:</span> {investigatingRec.type}</div>
+                <div><span className="text-[#737e76]">Diagnosis:</span> {investigatingRec.description}</div>
               </div>
 
-              <div className="pt-3 border-t border-white/10 flex justify-end gap-3">
+              <div className="pt-3 border-t border-[#1c2a22]/10 flex justify-end gap-3">
                 <button
                   onClick={() => setInvestigatingRec(null)}
-                  className="px-4 py-2 font-mono text-xs text-[#c2c6d6] hover:bg-white/5 rounded-lg"
+                  className="px-4 py-2 font-mono text-xs text-[#56655b] hover:bg-[#1c2a22]/[0.07] rounded-lg"
                 >
                   Close
                 </button>
@@ -371,7 +371,7 @@ export const AIInsightsView: React.FC<AIInsightsViewProps> = ({ onShedLoadTrigge
                     handleApplyRecommendation(investigatingRec.id);
                     setInvestigatingRec(null);
                   }}
-                  className="px-4 py-2 font-mono text-xs bg-[#4d8eff] hover:bg-[#adc6ff] text-[#00285d] font-bold rounded-lg shadow-md"
+                  className="px-4 py-2 font-mono text-xs bg-[#2c5e43] hover:bg-[#1f4632] text-[#fdfbf6] font-bold rounded-lg shadow-md"
                 >
                   Authorize Mitigation
                 </button>
@@ -383,51 +383,51 @@ export const AIInsightsView: React.FC<AIInsightsViewProps> = ({ onShedLoadTrigge
 
       {/* Add Manual Shift Modal */}
       {isAddShiftOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-fadeIn">
-          <form onSubmit={handleAddShift} className="glass-card rounded-2xl max-w-md w-full p-6 border border-white/10 shadow-2xl relative">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#14241b]/50 backdrop-blur-sm animate-fadeIn">
+          <form onSubmit={handleAddShift} className="glass-card rounded-2xl max-w-md w-full p-6 border border-[#1c2a22]/10 shadow-2xl relative">
             <button
               type="button"
               onClick={() => setIsAddShiftOpen(false)}
-              className="absolute top-4 right-4 text-[#c2c6d6] hover:text-white p-1 rounded-md"
+              className="absolute top-4 right-4 text-[#56655b] hover:text-[#1c2a22] p-1 rounded-md"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <h3 className="font-sans font-bold text-lg text-[#dae2fd] mb-4">
+            <h3 className="font-sans font-bold text-lg text-[#1c2a22] mb-4">
               Schedule Energy Shift
             </h3>
 
             <div className="space-y-4 font-mono text-xs">
               <div>
-                <label className="block text-[#c2c6d6] mb-1">Shift Name / Action</label>
+                <label className="block text-[#56655b] mb-1">Shift Name / Action</label>
                 <input
                   type="text"
                   required
                   placeholder="e.g. Ramp Down Chiller 3"
                   value={newShiftTitle}
                   onChange={(e) => setNewShiftTitle(e.target.value)}
-                  className="w-full bg-[#131b2e] border border-white/10 rounded-lg px-3 py-2 text-[#dae2fd] focus:outline-none focus:border-[#adc6ff]"
+                  className="w-full bg-[#f4f0e6] border border-[#1c2a22]/10 rounded-lg px-3 py-2 text-[#1c2a22] focus:outline-none focus:border-[#1f4632]"
                 />
               </div>
 
               <div>
-                <label className="block text-[#c2c6d6] mb-1">Execution Time</label>
+                <label className="block text-[#56655b] mb-1">Execution Time</label>
                 <input
                   type="text"
                   required
                   placeholder="e.g. 3:30 PM"
                   value={newShiftTime}
                   onChange={(e) => setNewShiftTime(e.target.value)}
-                  className="w-full bg-[#131b2e] border border-white/10 rounded-lg px-3 py-2 text-[#dae2fd] focus:outline-none focus:border-[#adc6ff]"
+                  className="w-full bg-[#f4f0e6] border border-[#1c2a22]/10 rounded-lg px-3 py-2 text-[#1c2a22] focus:outline-none focus:border-[#1f4632]"
                 />
               </div>
 
               <div>
-                <label className="block text-[#c2c6d6] mb-1">Facility Zone</label>
+                <label className="block text-[#56655b] mb-1">Facility Zone</label>
                 <select
                   value={newShiftZone}
                   onChange={(e) => setNewShiftZone(e.target.value)}
-                  className="w-full bg-[#131b2e] border border-white/10 rounded-lg px-3 py-2 text-[#dae2fd] focus:outline-none focus:border-[#adc6ff]"
+                  className="w-full bg-[#f4f0e6] border border-[#1c2a22]/10 rounded-lg px-3 py-2 text-[#1c2a22] focus:outline-none focus:border-[#1f4632]"
                 >
                   <option>Zone A - Main Atrium</option>
                   <option>North Wing</option>
@@ -437,17 +437,17 @@ export const AIInsightsView: React.FC<AIInsightsViewProps> = ({ onShedLoadTrigge
                 </select>
               </div>
 
-              <div className="pt-3 border-t border-white/10 flex justify-end gap-3">
+              <div className="pt-3 border-t border-[#1c2a22]/10 flex justify-end gap-3">
                 <button
                   type="button"
                   onClick={() => setIsAddShiftOpen(false)}
-                  className="px-4 py-2 text-[#c2c6d6] hover:bg-white/5 rounded-lg"
+                  className="px-4 py-2 text-[#56655b] hover:bg-[#1c2a22]/[0.07] rounded-lg"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-[#00a572] hover:bg-[#4edea3] text-[#003824] font-bold rounded-lg shadow-md"
+                  className="px-4 py-2 bg-[#2f6b44] hover:bg-[#3d7a4e] text-[#fdfbf6] font-bold rounded-lg shadow-md"
                 >
                   Save Shift
                 </button>
