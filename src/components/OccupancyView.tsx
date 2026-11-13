@@ -73,10 +73,10 @@ export const OccupancyView: React.FC = () => {
       {/* Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-3">
         <div>
-          <h1 className="font-sans font-bold text-2xl md:text-3xl text-[#dae2fd] tracking-tight">
+          <h1 className="font-sans font-bold text-2xl md:text-3xl text-[#1c2a22] tracking-tight">
             Occupancy
           </h1>
-          <p className="font-sans text-sm text-[#c2c6d6] mt-0.5">
+          <p className="font-sans text-sm text-[#56655b] mt-0.5">
             {currentCam.location}
           </p>
         </div>
@@ -87,7 +87,7 @@ export const OccupancyView: React.FC = () => {
             <select
               value={selectedCameraId}
               onChange={(e) => setSelectedCameraId(e.target.value)}
-              className="bg-[#171f33] text-[#dae2fd] font-mono text-xs border border-white/10 rounded-lg px-3 py-1.5 focus:outline-none focus:border-[#adc6ff] transition-colors cursor-pointer"
+              className="bg-[#fdfbf6] text-[#1c2a22] font-mono text-xs border border-[#1c2a22]/10 rounded-lg px-3 py-1.5 focus:outline-none focus:border-[#1f4632] transition-colors cursor-pointer"
             >
               {initialCameraFeeds.map((cam) => (
                 <option key={cam.id} value={cam.id}>
@@ -97,9 +97,9 @@ export const OccupancyView: React.FC = () => {
             </select>
           </div>
 
-          <div className="bg-[#00a572]/15 border border-[#4edea3]/30 rounded-lg px-3 py-1.5 flex items-center gap-2 shadow-sm shadow-[#00a572]/10">
-            <span className="w-2 h-2 rounded-full bg-[#4edea3] animate-pulse" />
-            <span className="font-mono text-xs font-semibold text-[#4edea3] tracking-wider">
+          <div className="bg-[#2f6b44]/15 border border-[#3d7a4e]/30 rounded-lg px-3 py-1.5 flex items-center gap-2 shadow-sm shadow-[#1f3d2b]/10">
+            <span className="w-2 h-2 rounded-full bg-[#3d7a4e] animate-pulse" />
+            <span className="font-mono text-xs font-semibold text-[#3d7a4e] tracking-wider">
               AI DETECTION ACTIVE
             </span>
           </div>
@@ -109,15 +109,15 @@ export const OccupancyView: React.FC = () => {
       {/* Bento Grid Layout */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
         {/* YOLOv8 Camera Feed Preview (Hero - 8 cols) */}
-        <div className="glass-panel rounded-xl overflow-hidden md:col-span-8 flex flex-col relative ambient-glow border border-white/10 shadow-2xl">
+        <div className="glass-panel rounded-xl overflow-hidden md:col-span-8 flex flex-col relative ambient-glow border border-[#1c2a22]/10 shadow-2xl">
           {/* Feed Header */}
-          <div className="px-4 py-2.5 border-b border-white/5 flex justify-between items-center bg-[#2d3449]/40">
-            <div className="font-mono text-xs text-[#c2c6d6] flex items-center gap-2">
-              <Video className="w-4 h-4 text-[#4edea3]" />
-              <span className="font-semibold text-[#dae2fd]">{currentCam.name}</span>
+          <div className="px-4 py-2.5 border-b border-[#1c2a22]/[0.07] flex justify-between items-center bg-[#e7e1d3]/40">
+            <div className="font-mono text-xs text-[#56655b] flex items-center gap-2">
+              <Video className="w-4 h-4 text-[#3d7a4e]" />
+              <span className="font-semibold text-[#1c2a22]">{currentCam.name}</span>
             </div>
             
-            <div className="flex items-center gap-3 font-mono text-[11px] text-[#adc6ff]">
+            <div className="flex items-center gap-3 font-mono text-[11px] text-[#1f4632]">
               <span>FPS: {liveFps}</span>
               <span className="opacity-50">|</span>
               <span>MODEL: {currentCam.model}</span>
@@ -140,10 +140,10 @@ export const OccupancyView: React.FC = () => {
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
             {/* Corner Bracket Reticles */}
-            <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-[#4edea3]/80 pointer-events-none" />
-            <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-[#4edea3]/80 pointer-events-none" />
-            <div className="absolute bottom-12 left-3 w-4 h-4 border-b-2 border-l-2 border-[#4edea3]/80 pointer-events-none" />
-            <div className="absolute bottom-12 right-3 w-4 h-4 border-b-2 border-r-2 border-[#4edea3]/80 pointer-events-none" />
+            <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-[#a9c4a3]/80 pointer-events-none" />
+            <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-[#a9c4a3]/80 pointer-events-none" />
+            <div className="absolute bottom-12 left-3 w-4 h-4 border-b-2 border-l-2 border-[#a9c4a3]/80 pointer-events-none" />
+            <div className="absolute bottom-12 right-3 w-4 h-4 border-b-2 border-r-2 border-[#a9c4a3]/80 pointer-events-none" />
 
             {/* Simulated YOLO Bounding Boxes */}
             {showBoundingBoxes && currentCam.boxes.map((box) => (
@@ -165,35 +165,35 @@ export const OccupancyView: React.FC = () => {
 
             {/* Snapshot Toast notification */}
             {snapshotTaken && (
-              <div className="absolute inset-0 bg-white/20 backdrop-blur-xs flex items-center justify-center animate-pulse z-30">
-                <span className="font-mono text-xs bg-black/80 text-[#4edea3] px-3 py-1.5 rounded-md border border-[#4edea3]/40">
+              <div className="absolute inset-0 bg-[#1c2a22]/12 backdrop-blur-xs flex items-center justify-center animate-pulse z-30">
+                <span className="font-mono text-xs bg-[#14241b]/85 text-[#cfe0c6] px-3 py-1.5 rounded-md border border-[#a9c4a3]/40">
                   SNAPSHOT RECORDED • SAVED TO LOCAL LOGS
                 </span>
               </div>
             )}
 
             {/* Interactive Stream Controls Bar */}
-            <div className="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-black/90 via-black/60 to-transparent px-4 flex items-center justify-between text-xs font-mono text-[#c2c6d6]">
+            <div className="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-black/90 via-black/60 to-transparent px-4 flex items-center justify-between text-xs font-mono text-[#d9e3d5]">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
                 <span className="text-white text-[11px]">LIVE REC</span>
                 <span className="opacity-40">|</span>
-                <span className="text-[11px] text-[#adc6ff]">{currentCam.resolution}</span>
+                <span className="text-[11px] text-[#c9d6c5]">{currentCam.resolution}</span>
               </div>
 
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setShowBoundingBoxes(!showBoundingBoxes)}
-                  className="px-2 py-1 rounded bg-[#2d3449]/70 hover:bg-[#31394d] text-white flex items-center gap-1 transition-colors text-[11px]"
+                  className="px-2 py-1 rounded bg-[#14241b]/60 hover:bg-[#14241b]/85 text-[#f5f1e6] border border-[#f5f1e6]/15 flex items-center gap-1 transition-colors text-[11px]"
                   title="Toggle YOLO Bounding Boxes"
                 >
-                  {showBoundingBoxes ? <Eye className="w-3.5 h-3.5 text-[#4edea3]" /> : <EyeOff className="w-3.5 h-3.5 text-gray-400" />}
+                  {showBoundingBoxes ? <Eye className="w-3.5 h-3.5 text-[#a9c4a3]" /> : <EyeOff className="w-3.5 h-3.5 text-gray-400" />}
                   <span>{showBoundingBoxes ? 'Boxes ON' : 'Boxes OFF'}</span>
                 </button>
 
                 <button
                   onClick={handleSnapshot}
-                  className="p-1.5 rounded bg-[#2d3449]/70 hover:bg-[#31394d] text-white transition-colors"
+                  className="p-1.5 rounded bg-[#14241b]/60 hover:bg-[#14241b]/85 text-[#f5f1e6] border border-[#f5f1e6]/15 transition-colors"
                   title="Take Frame Snapshot"
                 >
                   <Camera className="w-3.5 h-3.5" />
@@ -206,14 +206,14 @@ export const OccupancyView: React.FC = () => {
         {/* Live Stats Sidebar (4 cols) */}
         <div className="md:col-span-4 flex flex-col gap-4 md:gap-6">
           {/* Occupied Status Card */}
-          <div className="glass-panel rounded-xl p-6 flex flex-col items-center justify-center relative overflow-hidden text-center border-t-2 border-t-[#4edea3] ambient-glow-secondary">
-            <h3 className="font-mono text-xs text-[#c2c6d6] uppercase tracking-widest mb-1.5">
+          <div className="glass-panel rounded-xl p-6 flex flex-col items-center justify-center relative overflow-hidden text-center border-t-2 border-t-[#3d7a4e] ambient-glow-secondary">
+            <h3 className="font-mono text-xs text-[#56655b] uppercase tracking-widest mb-1.5">
               STATUS
             </h3>
-            <div className="font-sans font-extrabold text-4xl md:text-5xl text-[#4edea3] text-glow-secondary tracking-tight">
+            <div className="font-sans font-extrabold text-4xl md:text-5xl text-[#3d7a4e] text-glow-secondary tracking-tight">
               OCCUPIED
             </div>
-            <p className="font-mono text-[11px] text-[#4edea3]/80 mt-1">
+            <p className="font-mono text-[11px] text-[#3d7a4e] mt-1">
               Density: High Activity Detected
             </p>
           </div>
@@ -221,41 +221,41 @@ export const OccupancyView: React.FC = () => {
           {/* People Detected KPI */}
           <div className="glass-panel rounded-xl p-5 md:p-6 flex flex-col justify-between">
             <div className="flex justify-between items-start mb-3">
-              <h3 className="font-mono text-xs text-[#c2c6d6] uppercase tracking-wider">
+              <h3 className="font-mono text-xs text-[#56655b] uppercase tracking-wider">
                 People Detected
               </h3>
-              <span className="p-1.5 rounded-lg bg-[#2d3449]/60 text-[#adc6ff]">
+              <span className="p-1.5 rounded-lg bg-[#e7e1d3]/60 text-[#1f4632]">
                 <Users className="w-5 h-5" />
               </span>
             </div>
 
-            <div className="font-sans font-bold text-4xl md:text-5xl text-[#dae2fd] tracking-tight">
+            <div className="font-sans font-bold text-4xl md:text-5xl text-[#1c2a22] tracking-tight">
               {peopleCount}
             </div>
 
-            <div className="mt-2 text-[#adc6ff] font-mono text-xs flex items-center gap-1">
-              <ArrowUp className="w-3.5 h-3.5 text-[#4edea3]" />
-              <span className="text-[#4edea3] font-semibold">12%</span>
-              <span className="text-[#c2c6d6]/70">vs last hour</span>
+            <div className="mt-2 text-[#1f4632] font-mono text-xs flex items-center gap-1">
+              <ArrowUp className="w-3.5 h-3.5 text-[#3d7a4e]" />
+              <span className="text-[#3d7a4e] font-semibold">12%</span>
+              <span className="text-[#56655b]">vs last hour</span>
             </div>
           </div>
 
           {/* Mini Stats Grid */}
           <div className="grid grid-cols-2 gap-3 md:gap-4">
             <div className="glass-panel rounded-xl p-4">
-              <h4 className="font-mono text-[11px] text-[#c2c6d6]/80 mb-1">
+              <h4 className="font-mono text-[11px] text-[#56655b] mb-1">
                 Avg Confidence
               </h4>
-              <div className="font-sans font-bold text-xl md:text-2xl text-[#dae2fd]">
+              <div className="font-sans font-bold text-xl md:text-2xl text-[#1c2a22]">
                 96.8%
               </div>
             </div>
 
             <div className="glass-panel rounded-xl p-4">
-              <h4 className="font-mono text-[11px] text-[#c2c6d6]/80 mb-1">
+              <h4 className="font-mono text-[11px] text-[#56655b] mb-1">
                 Entry / Exit
               </h4>
-              <div className="font-sans font-bold text-xl md:text-2xl text-[#dae2fd]">
+              <div className="font-sans font-bold text-xl md:text-2xl text-[#1c2a22]">
                 {entryCount} / {exitCount}
               </div>
             </div>
@@ -266,62 +266,62 @@ export const OccupancyView: React.FC = () => {
         <div className="glass-panel rounded-xl p-5 md:p-6 md:col-span-8 flex flex-col">
           <div className="flex justify-between items-center mb-6">
             <div>
-              <h3 className="font-mono text-xs text-[#c2c6d6] uppercase tracking-wider">
+              <h3 className="font-mono text-xs text-[#56655b] uppercase tracking-wider">
                 Occupancy History (Last 6 Hours)
               </h3>
-              <p className="font-sans text-xs text-[#c2c6d6]/60 mt-0.5">Headcount distribution & rush-hour trend</p>
+              <p className="font-sans text-xs text-[#56655b] mt-0.5">Headcount distribution & rush-hour trend</p>
             </div>
-            <BarChart2 className="w-4 h-4 text-[#c2c6d6]" />
+            <BarChart2 className="w-4 h-4 text-[#56655b]" />
           </div>
 
           {/* Simulated Bar Chart */}
-          <div className="flex-1 w-full h-44 flex items-end justify-between gap-2.5 relative border-l border-b border-white/10 px-3 pb-2 pt-4">
+          <div className="flex-1 w-full h-44 flex items-end justify-between gap-2.5 relative border-l border-b border-[#1c2a22]/10 px-3 pb-2 pt-4">
             {/* Background Grid Lines */}
             <div className="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-15">
-              <div className="border-t border-white/40 w-full" />
-              <div className="border-t border-white/40 w-full" />
-              <div className="border-t border-white/40 w-full" />
+              <div className="border-t border-[#1c2a22]/12 w-full" />
+              <div className="border-t border-[#1c2a22]/12 w-full" />
+              <div className="border-t border-[#1c2a22]/12 w-full" />
             </div>
 
             <div className="flex-1 group relative flex flex-col items-center justify-end h-full">
-              <div className="w-full bg-[#adc6ff]/25 group-hover:bg-[#adc6ff]/50 transition-all rounded-t-sm" style={{ height: '30%' }} />
-              <span className="opacity-0 group-hover:opacity-100 absolute -top-6 font-mono text-[10px] bg-[#171f33] text-[#adc6ff] px-1.5 py-0.5 rounded border border-white/10 transition-opacity">8</span>
+              <div className="w-full bg-[#1f4632]/25 group-hover:bg-[#1f4632]/50 transition-all rounded-t-sm" style={{ height: '30%' }} />
+              <span className="opacity-0 group-hover:opacity-100 absolute -top-6 font-mono text-[10px] bg-[#fdfbf6] text-[#1f4632] px-1.5 py-0.5 rounded border border-[#1c2a22]/10 transition-opacity">8</span>
             </div>
 
             <div className="flex-1 group relative flex flex-col items-center justify-end h-full">
-              <div className="w-full bg-[#adc6ff]/35 group-hover:bg-[#adc6ff]/60 transition-all rounded-t-sm" style={{ height: '45%' }} />
-              <span className="opacity-0 group-hover:opacity-100 absolute -top-6 font-mono text-[10px] bg-[#171f33] text-[#adc6ff] px-1.5 py-0.5 rounded border border-white/10 transition-opacity">12</span>
+              <div className="w-full bg-[#1f4632]/35 group-hover:bg-[#1f4632]/60 transition-all rounded-t-sm" style={{ height: '45%' }} />
+              <span className="opacity-0 group-hover:opacity-100 absolute -top-6 font-mono text-[10px] bg-[#fdfbf6] text-[#1f4632] px-1.5 py-0.5 rounded border border-[#1c2a22]/10 transition-opacity">12</span>
             </div>
 
             <div className="flex-1 group relative flex flex-col items-center justify-end h-full">
-              <div className="w-full bg-[#adc6ff]/25 group-hover:bg-[#adc6ff]/50 transition-all rounded-t-sm" style={{ height: '35%' }} />
-              <span className="opacity-0 group-hover:opacity-100 absolute -top-6 font-mono text-[10px] bg-[#171f33] text-[#adc6ff] px-1.5 py-0.5 rounded border border-white/10 transition-opacity">9</span>
+              <div className="w-full bg-[#1f4632]/25 group-hover:bg-[#1f4632]/50 transition-all rounded-t-sm" style={{ height: '35%' }} />
+              <span className="opacity-0 group-hover:opacity-100 absolute -top-6 font-mono text-[10px] bg-[#fdfbf6] text-[#1f4632] px-1.5 py-0.5 rounded border border-[#1c2a22]/10 transition-opacity">9</span>
             </div>
 
             <div className="flex-1 group relative flex flex-col items-center justify-end h-full">
-              <div className="w-full bg-[#adc6ff]/50 group-hover:bg-[#adc6ff]/75 transition-all rounded-t-sm" style={{ height: '60%' }} />
-              <span className="opacity-0 group-hover:opacity-100 absolute -top-6 font-mono text-[10px] bg-[#171f33] text-[#adc6ff] px-1.5 py-0.5 rounded border border-white/10 transition-opacity">16</span>
+              <div className="w-full bg-[#1f4632]/50 group-hover:bg-[#1f4632]/75 transition-all rounded-t-sm" style={{ height: '60%' }} />
+              <span className="opacity-0 group-hover:opacity-100 absolute -top-6 font-mono text-[10px] bg-[#fdfbf6] text-[#1f4632] px-1.5 py-0.5 rounded border border-[#1c2a22]/10 transition-opacity">16</span>
             </div>
 
             <div className="flex-1 group relative flex flex-col items-center justify-end h-full">
-              <div className="w-full bg-[#adc6ff]/80 group-hover:bg-[#adc6ff] transition-all rounded-t-sm" style={{ height: '85%' }} />
-              <span className="opacity-0 group-hover:opacity-100 absolute -top-6 font-mono text-[10px] bg-[#171f33] text-[#adc6ff] px-1.5 py-0.5 rounded border border-white/10 transition-opacity">22</span>
+              <div className="w-full bg-[#1f4632]/80 group-hover:bg-[#1f4632] transition-all rounded-t-sm" style={{ height: '85%' }} />
+              <span className="opacity-0 group-hover:opacity-100 absolute -top-6 font-mono text-[10px] bg-[#fdfbf6] text-[#1f4632] px-1.5 py-0.5 rounded border border-[#1c2a22]/10 transition-opacity">22</span>
             </div>
 
             <div className="flex-1 group relative flex flex-col items-center justify-end h-full">
-              <div className="w-full bg-[#4edea3]/85 group-hover:bg-[#4edea3] transition-all rounded-t-sm shadow-md shadow-[#4edea3]/20" style={{ height: '100%' }} />
-              <span className="opacity-0 group-hover:opacity-100 absolute -top-6 font-mono text-[10px] bg-[#171f33] text-[#4edea3] font-bold px-1.5 py-0.5 rounded border border-[#4edea3]/30 transition-opacity">{peopleCount}</span>
+              <div className="w-full bg-[#3d7a4e]/85 group-hover:bg-[#3d7a4e] transition-all rounded-t-sm shadow-md shadow-[#1f3d2b]/10" style={{ height: '100%' }} />
+              <span className="opacity-0 group-hover:opacity-100 absolute -top-6 font-mono text-[10px] bg-[#fdfbf6] text-[#3d7a4e] font-bold px-1.5 py-0.5 rounded border border-[#3d7a4e]/30 transition-opacity">{peopleCount}</span>
             </div>
           </div>
 
           {/* Time Labels */}
-          <div className="flex justify-between text-[#c2c6d6]/60 font-mono text-[11px] mt-2.5 px-2">
+          <div className="flex justify-between text-[#56655b] font-mono text-[11px] mt-2.5 px-2">
             <span>10:00</span>
             <span>11:00</span>
             <span>12:00</span>
             <span>13:00</span>
             <span>14:00</span>
-            <span className="text-[#4edea3] font-bold">Now</span>
+            <span className="text-[#3d7a4e] font-bold">Now</span>
           </div>
         </div>
 
@@ -329,11 +329,11 @@ export const OccupancyView: React.FC = () => {
         <div className="glass-panel rounded-xl p-5 md:p-6 md:col-span-4 flex flex-col justify-between">
           <div>
             <div className="flex justify-between items-center mb-4">
-              <h3 className="font-mono text-xs text-[#c2c6d6] uppercase tracking-wider">
+              <h3 className="font-mono text-xs text-[#56655b] uppercase tracking-wider">
                 Detection Log
               </h3>
-              <span className="font-mono text-[11px] text-[#4edea3] flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#4edea3] animate-pulse" />
+              <span className="font-mono text-[11px] text-[#3d7a4e] flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#3d7a4e] animate-pulse" />
                 Live
               </span>
             </div>
@@ -346,19 +346,19 @@ export const OccupancyView: React.FC = () => {
                 return (
                   <div 
                     key={log.id} 
-                    className="flex justify-between items-center py-1.5 border-b border-white/5 text-xs font-sans hover:bg-white/5 px-1.5 rounded transition-colors"
+                    className="flex justify-between items-center py-1.5 border-b border-[#1c2a22]/[0.07] text-xs font-sans hover:bg-[#1c2a22]/[0.07] px-1.5 rounded transition-colors"
                   >
                     <div className="flex items-center gap-2">
                       <span 
                         className={`w-1.5 h-1.5 rounded-full ${
-                          isSecondary ? 'bg-[#4edea3]' :
-                          isTertiary ? 'bg-[#ffb95f]' :
-                          'bg-[#8c909f]'
+                          isSecondary ? 'bg-[#3d7a4e]' :
+                          isTertiary ? 'bg-[#a8741a]' :
+                          'bg-[#8a958c]'
                         }`} 
                       />
-                      <span className="text-[#dae2fd]">{log.event}</span>
+                      <span className="text-[#1c2a22]">{log.event}</span>
                     </div>
-                    <span className="font-mono text-[11px] text-[#c2c6d6]/60">
+                    <span className="font-mono text-[11px] text-[#56655b]">
                       {log.timeAgo}
                     </span>
                   </div>
@@ -369,7 +369,7 @@ export const OccupancyView: React.FC = () => {
 
           <button
             onClick={() => setLogs(initialDetectionLogs)}
-            className="mt-4 pt-2 border-t border-white/5 font-mono text-xs text-[#adc6ff]/70 hover:text-[#adc6ff] flex items-center justify-center gap-1 w-full"
+            className="mt-4 pt-2 border-t border-[#1c2a22]/[0.07] font-mono text-xs text-[#1f4632]/70 hover:text-[#1f4632] flex items-center justify-center gap-1 w-full"
           >
             <RefreshCw className="w-3 h-3" />
             <span>Reset Stream Buffer</span>

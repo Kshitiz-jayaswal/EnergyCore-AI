@@ -35,51 +35,51 @@ export const SettingsView: React.FC = () => {
   return (
     <div className="space-y-6 animate-fadeIn pb-8 max-w-4xl">
       <div>
-        <h1 className="font-sans font-bold text-2xl md:text-3xl text-[#dae2fd] tracking-tight">
+        <h1 className="font-sans font-bold text-2xl md:text-3xl text-[#1c2a22] tracking-tight">
           System Configuration & AI Policies
         </h1>
-        <p className="font-sans text-sm text-[#c2c6d6] mt-0.5">
+        <p className="font-sans text-sm text-[#56655b] mt-0.5">
           Tune algorithmic thresholds, demand limit triggers, and hardware telemetry intervals.
         </p>
       </div>
 
       <form onSubmit={handleSave} className="space-y-6">
         {/* Facility & Load Limits */}
-        <div className="glass-panel rounded-xl p-6 border border-white/10 shadow-xl space-y-5">
-          <div className="flex items-center gap-2 text-[#adc6ff] border-b border-white/10 pb-3">
+        <div className="glass-panel rounded-xl p-6 border border-[#1c2a22]/10 shadow-xl space-y-5">
+          <div className="flex items-center gap-2 text-[#1f4632] border-b border-[#1c2a22]/10 pb-3">
             <Sliders className="w-5 h-5" />
-            <h3 className="font-sans font-bold text-base text-[#dae2fd]">
+            <h3 className="font-sans font-bold text-base text-[#1c2a22]">
               Demand Limit & Safety Thresholds
             </h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 font-mono text-xs">
             <div>
-              <label className="block text-[#c2c6d6] mb-1.5 font-semibold">
+              <label className="block text-[#56655b] mb-1.5 font-semibold">
                 Peak Demand Alarm Limit (kW)
               </label>
               <input
                 type="number"
                 value={peakThreshold}
                 onChange={(e) => setPeakThreshold(Number(e.target.value))}
-                className="w-full bg-[#171f33] border border-white/10 rounded-lg px-4 py-2.5 text-[#dae2fd] focus:outline-none focus:border-[#adc6ff]"
+                className="w-full bg-[#fdfbf6] border border-[#1c2a22]/10 rounded-lg px-4 py-2.5 text-[#1c2a22] focus:outline-none focus:border-[#1f4632]"
               />
-              <span className="text-[11px] text-[#c2c6d6]/60 mt-1 block">
+              <span className="text-[11px] text-[#56655b] mt-1 block">
                 Triggers critical alarm and pre-emptive chiller shedding.
               </span>
             </div>
 
             <div>
-              <label className="block text-[#c2c6d6] mb-1.5 font-semibold">
+              <label className="block text-[#56655b] mb-1.5 font-semibold">
                 CO2 Hazard Threshold (ppm)
               </label>
               <input
                 type="number"
                 value={co2Threshold}
                 onChange={(e) => setCo2Threshold(Number(e.target.value))}
-                className="w-full bg-[#171f33] border border-white/10 rounded-lg px-4 py-2.5 text-[#dae2fd] focus:outline-none focus:border-[#adc6ff]"
+                className="w-full bg-[#fdfbf6] border border-[#1c2a22]/10 rounded-lg px-4 py-2.5 text-[#1c2a22] focus:outline-none focus:border-[#1f4632]"
               />
-              <span className="text-[11px] text-[#c2c6d6]/60 mt-1 block">
+              <span className="text-[11px] text-[#56655b] mt-1 block">
                 Triggers automatic fresh-air damper override.
               </span>
             </div>
@@ -87,17 +87,17 @@ export const SettingsView: React.FC = () => {
         </div>
 
         {/* AI & YOLO Vision Engine */}
-        <div className="glass-panel rounded-xl p-6 border border-white/10 shadow-xl space-y-5">
-          <div className="flex items-center gap-2 text-[#4edea3] border-b border-white/10 pb-3">
+        <div className="glass-panel rounded-xl p-6 border border-[#1c2a22]/10 shadow-xl space-y-5">
+          <div className="flex items-center gap-2 text-[#3d7a4e] border-b border-[#1c2a22]/10 pb-3">
             <Cpu className="w-5 h-5" />
-            <h3 className="font-sans font-bold text-base text-[#dae2fd]">
+            <h3 className="font-sans font-bold text-base text-[#1c2a22]">
               Computer Vision & Automated Strategy
             </h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 font-mono text-xs">
             <div>
-              <label className="block text-[#c2c6d6] mb-1.5 font-semibold">
+              <label className="block text-[#56655b] mb-1.5 font-semibold">
                 YOLOv8 Detection Confidence ({Math.round(yoloConfidence * 100)}%)
               </label>
               <input
@@ -107,22 +107,22 @@ export const SettingsView: React.FC = () => {
                 step="0.01"
                 value={yoloConfidence}
                 onChange={(e) => setYoloConfidence(Number(e.target.value))}
-                className="w-full accent-[#4edea3] cursor-pointer"
+                className="w-full accent-[#3d7a4e] cursor-pointer"
               />
-              <div className="flex justify-between text-[11px] text-[#c2c6d6]/60 mt-1">
+              <div className="flex justify-between text-[11px] text-[#56655b] mt-1">
                 <span>50% (Sensitive)</span>
                 <span>99% (Strict)</span>
               </div>
             </div>
 
             <div>
-              <label className="block text-[#c2c6d6] mb-1.5 font-semibold">
+              <label className="block text-[#56655b] mb-1.5 font-semibold">
                 Automated Load Shedding Policy
               </label>
               <select
                 value={sheddingStrategy}
                 onChange={(e) => setSheddingStrategy(e.target.value as any)}
-                className="w-full bg-[#171f33] border border-white/10 rounded-lg px-4 py-2.5 text-[#dae2fd] focus:outline-none focus:border-[#4edea3]"
+                className="w-full bg-[#fdfbf6] border border-[#1c2a22]/10 rounded-lg px-4 py-2.5 text-[#1c2a22] focus:outline-none focus:border-[#3d7a4e]"
               >
                 <option value="conservative">Conservative (Protect Comfort)</option>
                 <option value="balanced">Balanced (Optimal Efficiency)</option>
@@ -137,7 +137,7 @@ export const SettingsView: React.FC = () => {
           <button
             type="button"
             onClick={handleReset}
-            className="font-mono text-xs text-[#c2c6d6] hover:text-white px-4 py-2.5 rounded-lg border border-white/10 hover:bg-white/5 flex items-center gap-2 transition-colors"
+            className="font-mono text-xs text-[#56655b] hover:text-[#1c2a22] px-4 py-2.5 rounded-lg border border-[#1c2a22]/10 hover:bg-[#1c2a22]/[0.07] flex items-center gap-2 transition-colors"
           >
             <RotateCcw className="w-4 h-4" />
             <span>Reset Defaults</span>
@@ -145,7 +145,7 @@ export const SettingsView: React.FC = () => {
 
           <div className="flex items-center gap-3">
             {savedSuccess && (
-              <span className="font-mono text-xs text-[#4edea3] flex items-center gap-1 animate-fadeIn">
+              <span className="font-mono text-xs text-[#3d7a4e] flex items-center gap-1 animate-fadeIn">
                 <Check className="w-4 h-4" />
                 <span>Configuration Saved</span>
               </span>
@@ -153,7 +153,7 @@ export const SettingsView: React.FC = () => {
 
             <button
               type="submit"
-              className="font-mono text-xs font-bold px-6 py-2.5 rounded-lg bg-[#4edea3] text-[#003824] hover:bg-[#86efac] transition-all flex items-center gap-2 shadow-lg shadow-[#4edea3]/20 cursor-pointer"
+              className="font-mono text-xs font-bold px-6 py-2.5 rounded-lg bg-[#3d7a4e] text-[#fdfbf6] hover:bg-[#6b9c74] transition-all flex items-center gap-2 shadow-lg shadow-[#1f3d2b]/10 cursor-pointer"
             >
               <Save className="w-4 h-4" />
               <span>Apply Settings</span>

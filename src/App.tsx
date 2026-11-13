@@ -81,7 +81,7 @@ export default function App() {
   };
 
   return (
-    <div className="flex h-screen w-full bg-[#0b1326] text-[#dae2fd] overflow-hidden font-sans selection:bg-[#4edea3]/30 selection:text-[#4edea3]">
+    <div className="flex h-screen w-full bg-[#f5f1e6] text-[#1c2a22] overflow-hidden font-sans selection:bg-[#a9c4a3] selection:text-[#163626]">
       {/* Desktop Sidebar Navigation */}
       <div className="hidden md:flex flex-shrink-0">
         <NavigationDrawer
@@ -95,10 +95,10 @@ export default function App() {
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-50 md:hidden flex">
           <div
-            className="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity"
+            className="fixed inset-0 bg-[#14241b]/50 backdrop-blur-sm transition-opacity"
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className="relative flex-1 flex flex-col max-w-xs w-full bg-[#131b2e] shadow-2xl z-10 animate-slideRight">
+          <div className="relative flex-1 flex flex-col max-w-[16rem] w-full bg-[#173a28] shadow-2xl z-10 animate-slideRight">
             <NavigationDrawer
               activeTab={activeTab}
               onTabChange={(tab) => {
@@ -135,8 +135,8 @@ export default function App() {
 
         {/* Dynamic Global Toast Notification */}
         {toastMessage && (
-          <div className="fixed top-16 right-4 z-50 bg-[#171f33] text-[#4edea3] font-mono text-xs px-4 py-3 rounded-xl border border-[#4edea3]/40 shadow-2xl flex items-center gap-2 animate-fadeIn">
-            <span className="w-2 h-2 rounded-full bg-[#4edea3] animate-ping" />
+          <div className="fixed top-20 right-4 left-4 sm:left-auto sm:max-w-md z-50 bg-[#1f4632] text-[#f5f1e6] font-sans text-sm font-medium px-4 py-3 rounded-xl shadow-[0_12px_32px_-12px_rgba(20,36,27,0.5)] flex items-center gap-2.5 animate-fadeIn">
+            <span className="w-2 h-2 rounded-full bg-[#a9c4a3] flex-shrink-0" />
             <span>{toastMessage}</span>
           </div>
         )}

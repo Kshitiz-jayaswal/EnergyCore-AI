@@ -82,10 +82,10 @@ export const DigitalTwinView: React.FC = () => {
       {/* Header & Controls */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <h1 className="font-sans font-bold text-2xl md:text-3xl text-[#dae2fd] tracking-tight">
+          <h1 className="font-sans font-bold text-2xl md:text-3xl text-[#1c2a22] tracking-tight">
             Digital Twin
           </h1>
-          <p className="font-sans text-sm text-[#c2c6d6] mt-0.5">
+          <p className="font-sans text-sm text-[#56655b] mt-0.5">
             Real-time spatial telemetry and environmental modeling.
           </p>
         </div>
@@ -96,7 +96,7 @@ export const DigitalTwinView: React.FC = () => {
             <select
               value={selectedZone}
               onChange={(e) => setSelectedZone(e.target.value)}
-              className="appearance-none bg-[#171f33] border border-white/10 rounded-lg py-2 pl-4 pr-10 font-mono text-xs text-[#dae2fd] focus:outline-none focus:border-[#adc6ff] transition-colors cursor-pointer shadow-md"
+              className="appearance-none bg-[#fdfbf6] border border-[#1c2a22]/10 rounded-lg py-2 pl-4 pr-10 font-mono text-xs text-[#1c2a22] focus:outline-none focus:border-[#1f4632] transition-colors cursor-pointer shadow-md"
             >
               <option>All Zones</option>
               <option>North Wing</option>
@@ -104,15 +104,15 @@ export const DigitalTwinView: React.FC = () => {
               <option>Laboratories</option>
               <option>Central</option>
             </select>
-            <ChevronDown className="w-4 h-4 absolute right-3 top-1/2 -translate-y-1/2 text-[#c2c6d6] pointer-events-none" />
+            <ChevronDown className="w-4 h-4 absolute right-3 top-1/2 -translate-y-1/2 text-[#56655b] pointer-events-none" />
           </div>
 
           <button
             onClick={() => setFilterOccupiedOnly(!filterOccupiedOnly)}
             className={`border rounded-lg p-2 transition-all flex items-center justify-center ${
               filterOccupiedOnly
-                ? 'bg-[#00a572]/20 border-[#4edea3] text-[#4edea3]'
-                : 'bg-[#171f33] border-white/10 hover:bg-[#2d3449] text-[#c2c6d6]'
+                ? 'bg-[#2f6b44]/20 border-[#3d7a4e] text-[#3d7a4e]'
+                : 'bg-[#fdfbf6] border-[#1c2a22]/10 hover:bg-[#e7e1d3] text-[#56655b]'
             }`}
             title="Toggle Occupied Only Filter"
           >
@@ -133,17 +133,17 @@ export const DigitalTwinView: React.FC = () => {
               key={room.id}
               className={`rounded-xl p-6 flex flex-col gap-6 relative overflow-hidden transition-all duration-200 shadow-xl ${
                 isWarning
-                  ? 'bg-[#131b2e] border-2 border-[#ffb95f]/40 shadow-[#ffb95f]/5'
+                  ? 'bg-[#f4f0e6] border-2 border-[#a8741a]/40 shadow-[#1f3d2b]/10'
                   : isVacant
-                  ? 'bg-[#060e20] border border-white/5 opacity-85 hover:opacity-100'
-                  : 'bg-[#131b2e] border border-white/10 hover:border-white/20'
+                  ? 'bg-[#efe9dc] border border-[#1c2a22]/[0.07] opacity-85 hover:opacity-100'
+                  : 'bg-[#f4f0e6] border border-[#1c2a22]/10 hover:border-[#1c2a22]/12'
               }`}
             >
               {/* Ambient Status Glow in Corner */}
               <div
-                className={`absolute top-0 right-0 w-32 h-32 blur-3xl rounded-full -translate-y-1/2 translate-x-1/4 pointer-events-none ${
-                  isWarning ? 'bg-[#ffb95f]/15' :
-                  isOccupied ? 'bg-[#4edea3]/10' :
+                className={`hidden absolute top-0 right-0 w-32 h-32 blur-3xl rounded-full -translate-y-1/2 translate-x-1/4 pointer-events-none ${
+                  isWarning ? 'bg-[#a8741a]/15' :
+                  isOccupied ? 'bg-[#3d7a4e]/10' :
                   'bg-transparent'
                 }`}
               />
@@ -151,17 +151,17 @@ export const DigitalTwinView: React.FC = () => {
               {/* Room Header */}
               <div className="flex justify-between items-start z-10">
                 <div>
-                  <h2 className="font-sans font-bold text-lg md:text-xl text-[#dae2fd]">
+                  <h2 className="font-sans font-bold text-lg md:text-xl text-[#1c2a22]">
                     {room.name}
                   </h2>
                   {isWarning && (
-                    <div className="font-mono text-xs text-[#ffb95f] flex items-center gap-1 mt-1 font-semibold">
+                    <div className="font-mono text-xs text-[#8a5f14] flex items-center gap-1 mt-1 font-semibold">
                       <AlertTriangle className="w-3.5 h-3.5" />
                       <span>{room.warningMessage}</span>
                     </div>
                   )}
                   {!isWarning && (
-                    <div className="font-mono text-[11px] text-[#c2c6d6]/60 mt-0.5">
+                    <div className="font-mono text-[11px] text-[#56655b] mt-0.5">
                       {room.zone} • {room.co2Ppm} ppm CO2
                     </div>
                   )}
@@ -170,17 +170,17 @@ export const DigitalTwinView: React.FC = () => {
                 <span
                   className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded font-mono text-xs font-semibold border ${
                     isWarning
-                      ? 'bg-[#ca8100]/20 text-[#ffb95f] border-[#ffb95f]/30'
+                      ? 'bg-[#b8862f]/20 text-[#8a5f14] border-[#a8741a]/30'
                       : isOccupied
-                      ? 'bg-[#00a572]/15 text-[#4edea3] border-[#4edea3]/30'
-                      : 'bg-[#2d3449]/40 text-[#c2c6d6] border-white/10'
+                      ? 'bg-[#2f6b44]/15 text-[#3d7a4e] border-[#3d7a4e]/30'
+                      : 'bg-[#e7e1d3]/40 text-[#56655b] border-[#1c2a22]/10'
                   }`}
                 >
                   <span
                     className={`w-1.5 h-1.5 rounded-full ${
-                      isWarning ? 'bg-[#ffb95f] animate-pulse' :
-                      isOccupied ? 'bg-[#4edea3] animate-pulse' :
-                      'bg-[#8c909f]'
+                      isWarning ? 'bg-[#a8741a] animate-pulse' :
+                      isOccupied ? 'bg-[#3d7a4e] animate-pulse' :
+                      'bg-[#8a958c]'
                     }`}
                   />
                   <span>{room.status}</span>
@@ -190,37 +190,37 @@ export const DigitalTwinView: React.FC = () => {
               {/* Telemetry Metrics */}
               <div className="grid grid-cols-2 gap-4 z-10">
                 {/* Temperature */}
-                <div className="bg-[#171f33] p-4 rounded-lg border border-white/5">
-                  <div className="font-mono text-xs text-[#c2c6d6]/70 mb-1">
+                <div className="bg-[#fdfbf6] p-4 rounded-lg border border-[#1c2a22]/[0.07]">
+                  <div className="font-mono text-xs text-[#56655b] mb-1">
                     Temperature
                   </div>
                   <div
                     className={`font-sans font-bold text-3xl md:text-4xl tracking-tighter ${
-                      isWarning ? 'text-[#ffb95f]' : 'text-[#dae2fd]'
+                      isWarning ? 'text-[#8a5f14]' : 'text-[#1c2a22]'
                     }`}
                   >
                     {room.temperature.toFixed(1)}
-                    <span className="text-xl font-normal text-[#c2c6d6]/70 ml-1">°C</span>
+                    <span className="text-xl font-normal text-[#56655b] ml-1">°C</span>
                   </div>
                 </div>
 
                 {/* Power Draw */}
-                <div className="bg-[#171f33] p-4 rounded-lg border border-white/5 relative overflow-hidden">
+                <div className="bg-[#fdfbf6] p-4 rounded-lg border border-[#1c2a22]/[0.07] relative overflow-hidden">
                   {isWarning && (
-                    <div className="absolute bottom-0 left-0 w-full h-1 bg-[#ffb95f]/30">
-                      <div className="h-full bg-[#ffb95f] w-[90%]" />
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-[#a8741a]/30">
+                      <div className="h-full bg-[#a8741a] w-[90%]" />
                     </div>
                   )}
-                  <div className="font-mono text-xs text-[#c2c6d6]/70 mb-1">
+                  <div className="font-mono text-xs text-[#56655b] mb-1">
                     Power Draw
                   </div>
                   <div
                     className={`font-sans font-bold text-3xl md:text-4xl tracking-tighter ${
-                      isOccupied ? 'text-[#adc6ff]' : 'text-[#dae2fd]'
+                      isOccupied ? 'text-[#1f4632]' : 'text-[#1c2a22]'
                     }`}
                   >
                     {room.powerDraw}
-                    <span className="text-xl font-normal text-[#c2c6d6]/70 ml-1">
+                    <span className="text-xl font-normal text-[#56655b] ml-1">
                       {room.powerUnit}
                     </span>
                   </div>
@@ -228,20 +228,20 @@ export const DigitalTwinView: React.FC = () => {
               </div>
 
               {/* Direct Fixture Toggles */}
-              <div className="flex items-center gap-3 pt-3 border-t border-white/5 z-10">
+              <div className="flex items-center gap-3 pt-3 border-t border-[#1c2a22]/[0.07] z-10">
                 {/* Light Toggle */}
                 <button
                   onClick={() => toggleLight(room.id)}
                   className={`flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all cursor-pointer ${
                     room.devices.lights
-                      ? 'bg-[#171f33] text-[#dae2fd] border-[#adc6ff]/40 shadow-sm shadow-[#adc6ff]/10'
-                      : 'bg-[#171f33]/40 text-[#c2c6d6]/50 border-white/5'
+                      ? 'bg-[#fdfbf6] text-[#1c2a22] border-[#1f4632]/40 shadow-sm shadow-[#1f3d2b]/10'
+                      : 'bg-[#fdfbf6]/40 text-[#56655b] border-[#1c2a22]/[0.07]'
                   }`}
                   title="Toggle Room Lights"
                 >
                   <Lightbulb
                     className={`w-4 h-4 ${
-                      room.devices.lights ? 'text-[#adc6ff]' : 'text-[#8c909f]'
+                      room.devices.lights ? 'text-[#1f4632]' : 'text-[#737e76]'
                     }`}
                   />
                   <span className="font-mono text-xs font-bold">
@@ -254,20 +254,20 @@ export const DigitalTwinView: React.FC = () => {
                   onClick={() => toggleFan(room.id)}
                   className={`flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all cursor-pointer ${
                     room.devices.fans === 'MAX'
-                      ? 'bg-[#171f33] text-[#ffb95f] border-[#ffb95f]/40 shadow-sm shadow-[#ffb95f]/10'
+                      ? 'bg-[#fdfbf6] text-[#8a5f14] border-[#a8741a]/40 shadow-sm shadow-[#1f3d2b]/10'
                       : room.devices.fans === 'ON'
-                      ? 'bg-[#171f33] text-[#dae2fd] border-[#adc6ff]/40'
-                      : 'bg-[#171f33]/40 text-[#c2c6d6]/50 border-white/5'
+                      ? 'bg-[#fdfbf6] text-[#1c2a22] border-[#1f4632]/40'
+                      : 'bg-[#fdfbf6]/40 text-[#56655b] border-[#1c2a22]/[0.07]'
                   }`}
                   title="Toggle Fans (OFF -> ON -> MAX)"
                 >
                   <Fan
                     className={`w-4 h-4 ${
                       room.devices.fans === 'MAX'
-                        ? 'text-[#ffb95f] animate-spin'
+                        ? 'text-[#8a5f14] animate-spin'
                         : room.devices.fans === 'ON'
-                        ? 'text-[#adc6ff] animate-spin'
-                        : 'text-[#8c909f]'
+                        ? 'text-[#1f4632] animate-spin'
+                        : 'text-[#737e76]'
                     }`}
                   />
                   <span className="font-mono text-xs font-bold">
@@ -280,14 +280,14 @@ export const DigitalTwinView: React.FC = () => {
                   onClick={() => toggleAC(room.id)}
                   className={`flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all cursor-pointer ${
                     room.devices.ac
-                      ? 'bg-[#171f33] text-[#dae2fd] border-[#adc6ff]/40 shadow-sm shadow-[#adc6ff]/10'
-                      : 'bg-[#171f33]/40 text-[#c2c6d6]/50 border-white/5'
+                      ? 'bg-[#fdfbf6] text-[#1c2a22] border-[#1f4632]/40 shadow-sm shadow-[#1f3d2b]/10'
+                      : 'bg-[#fdfbf6]/40 text-[#56655b] border-[#1c2a22]/[0.07]'
                   }`}
                   title="Toggle Air Conditioning"
                 >
                   <Snowflake
                     className={`w-4 h-4 ${
-                      room.devices.ac ? 'text-[#adc6ff]' : 'text-[#8c909f]'
+                      room.devices.ac ? 'text-[#1f4632]' : 'text-[#737e76]'
                     }`}
                   />
                   <span className="font-mono text-xs font-bold">
